@@ -30,7 +30,7 @@ class PBullet {
     ellipse(this.x, this.y, 10)
   }
   move() {
-    this.x -= this.xDisplacement / 60 / this.speed
-    this.y -= this.yDisplacement / 60 / this.speed
+    this.x -= this.xDisplacement / 12
+    this.y -= this.yDisplacement / 12
   }
 }
