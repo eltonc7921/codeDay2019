@@ -31,7 +31,7 @@ function draw() {
 }
 
 function shoot() {
-  if (frameCount % 20 == 0) {
+  if (frameCount % 60 == 0) {
     for (let i = 0; i < zombies.length; i++) {
       bullets.push(new OpBullet(zombies[i].x, zombies[i].y,2));
     }
