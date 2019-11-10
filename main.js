@@ -1,6 +1,7 @@
 var player = [];
-var bullets = [];
+var eBullets = [];
 var zombies = [];
+var pBullets = [];
 
 
 function setup() {
@@ -15,9 +16,9 @@ function setup() {
 
 function draw() {
   background(0);
-  for (let i = 0; i < bullets.length; i++) {
-    bullets[i].display();
-    bullets[i].move();
+  for (let i = 0; i < eBullets.length; i++) {
+    eBullets[i].display();
+    eBullets[i].move();
   }
   for (let i = 0; i < zombies.length; i++) {
     zombies[i].display();
@@ -26,17 +27,17 @@ function draw() {
     player[i].move()
     player[i].display()
   }
-
-  shoot();
+  eShoot();
 }
 
-function shoot() {
+function eShoot() {
   if (frameCount % 60 == 0) {
     for (let i = 0; i < zombies.length; i++) {
-      bullets.push(new OpBullet(zombies[i].x, zombies[i].y,2));
+      eBullets.push(new Bullet(zombies[i].x, zombies[i].y,2));
     }
   }
-  if (frameCount % 60 == 0) {
-     console.log(bullets[0].x);
-  }
+}
+
+function mousePressed() {
+  pBullets.push(new Bullet(mouseX,mouseY,1.5));
 }
