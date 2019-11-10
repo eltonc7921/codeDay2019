@@ -22,6 +22,7 @@ class Player {
       }
     }
     this.display = function() {
+      fill(0,255,125);
       ellipse(this.x, this.y, 50, 50);
     }
   }

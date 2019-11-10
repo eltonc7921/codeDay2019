@@ -7,8 +7,8 @@ class Zombie {
   }
 
   display() {
+    fill(255, 0, 0);
     noStroke()
     rect(this.x, this.y, 50, 50)
-    fill(10, 200, 50);
   }
 }
