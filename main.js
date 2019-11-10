@@ -27,6 +27,10 @@ function draw() {
     player[i].move()
     player[i].display()
   }
+  for (let i = 0; i < pBullets.length; i++) {
+    pBullets[i].move();
+    pBullets[i].display();
+  }
   eShoot();
 }
 
@@ -39,5 +43,5 @@ function eShoot() {
 }
 
 function mousePressed() {
-  pBullets.push(new Bullet(mouseX,mouseY,1.5));
+  pBullets.push(new PBullet(player[0].x, player[0].y, 1.5))
 }
