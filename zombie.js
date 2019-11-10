@@ -1,7 +1,5 @@
-var zombies = []
-
 class Zombie {
-  constructor(x,y,speed) {
+  constructor(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -10,11 +8,7 @@ class Zombie {
 
   display() {
     noStroke()
-    rect(this.x,this.y,30,45)
-    fill(10,200,50);
-  }
-
-  move() {
-
+    rect(this.x, this.y, 50, 50)
+    fill(10, 200, 50);
   }
 }
