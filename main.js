@@ -32,6 +32,8 @@ function draw() {
     pBullets[i].display();
   }
   eShoot();
+  boundaryKill(pBullets);
+  boundaryKill(eBullets);
 }
 
 function eShoot() {
@@ -44,4 +46,16 @@ function eShoot() {
 
 function mousePressed() {
   pBullets.push(new PBullet(player[0].x, player[0].y, 1.5))
+}
+
+function boundaryKill(array) { //removes "array" when its out of canvas
+  for (let i = 0; i < array.length; i++) {
+
+    if (array[i].y <= 0 || //top
+      array[i].y >= height || //bottom
+      array[i].x <= 0 || //left
+      array[i].x >= width) { //right
+      array.splice(i, 1);
+    }
+  }
 }
